@@ -28,7 +28,7 @@ const expressServer = app.listen(port, () => {
 });
 
 mongoose
-  .connect(env.ATLAS_URI, {
+  .connect(process.env.ATLAS_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
