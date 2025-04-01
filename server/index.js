@@ -21,7 +21,6 @@ app.get("/", (req, res) => {
   res.send("Welcome to our chat API...");
 });
 
-const uri = process.env.ATLAS_URI;
 const port = process.env.PORT || 5003;
 
 const expressServer = app.listen(port, () => {
@@ -29,7 +28,7 @@ const expressServer = app.listen(port, () => {
 });
 
 mongoose
-  .connect(uri, {
+  .connect(ATLAS_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
