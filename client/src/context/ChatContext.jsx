@@ -107,8 +107,8 @@ export const ChatContextProvider = ({ children, user }) => {
   
       setAllUsers(response);
   
-      if (userChats) {
-        const otherUsers = response.filter(u => u._id !== user._id).map(u => {
+      if (userChats && user) {
+        const otherUsers = (response || []).filter(u => u && u._id && user._id && u._id !== user._id).map(u => {
           const isChatCreated = userChats.some(
             chat => chat.members.includes(u._id)
           );
