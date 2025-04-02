@@ -1,4 +1,4 @@
-export const baseUrl = "http://localhost:5003/api";
+export const baseUrl = "https://msngr.onrender.com/api";
 
 export const postRequest = async (url, body) => {
   const response = await fetch(url, {

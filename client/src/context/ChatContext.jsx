@@ -24,7 +24,7 @@ export const ChatContextProvider = ({ children, user }) => {
   const [isModalOpen, setIsModalOpen] = useState(true);
 
   useEffect(() => {
-    const newSocket = io("localhost:5003");
+    const newSocket = io("https://msngr.onrender.com");
     setSocket(newSocket);
 
     return () => {
