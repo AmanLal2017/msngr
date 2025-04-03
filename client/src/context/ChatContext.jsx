@@ -122,7 +122,7 @@ export const ChatContextProvider = ({ children, user }) => {
     };
   
     getUsers();
-  }, [userChats, allUsers]);
+  }, [userChats]);
 
   useEffect(() => {
     const getUserChats = async () => {
