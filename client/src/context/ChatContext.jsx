@@ -19,6 +19,7 @@ export const ChatContextProvider = ({ children, user }) => {
   const [newMessage, setNewMessage] = useState(null);
   const [potentialChats, setPotentialChats] = useState(null);
   const [currentChats, setCurrentChats] = useState(null);
+  const [isUsersLoading, setIsUsersLoading] = useState(false);
   const [notifications, setNotifications] = useState([]);
   const [allUsers, setAllUsers] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -98,7 +99,11 @@ export const ChatContextProvider = ({ children, user }) => {
 
   useEffect(() => {
     const getUsers = async () => {
+      setIsUsersLoading(true);
+
       const response = await getRequest(`${baseUrl}/users`);
+
+      setIsUsersLoading(false);
   
       if (response.error) {
         console.log("Error fetching users:", response);
@@ -259,6 +264,7 @@ export const ChatContextProvider = ({ children, user }) => {
         sendTextMessage,
         sendTextMessageError,
         onlineUsers,
+        isUsersLoading,
         potentialChats,
         currentChats,
         createChat,

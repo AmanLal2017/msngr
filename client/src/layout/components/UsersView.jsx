@@ -4,7 +4,7 @@ import { ChatContext } from "../../context/ChatContext";
 import { UserListItem } from "./UserListItem";
 
 export const UsersView = () => {
-  const { potentialChats, currentChats } = useContext(ChatContext);
+  const { potentialChats, currentChats, isUserChatsLoading } = useContext(ChatContext);
   const [search, setSearch] = useState('');
 
   const filteredCurrentChats = useMemo(() => {
@@ -45,7 +45,7 @@ export const UsersView = () => {
         </div>
       </div>
       
-      {filteredCurrentChats?.length !== 0 && 
+      {filteredCurrentChats?.length !== 0 && !isUserChatsLoading &&
         <div>
           <div className="flex items-center justify-center mb-4">
             <h2 className="font-medium">Friends</h2>
@@ -62,7 +62,7 @@ export const UsersView = () => {
         </div>
       }
 
-      {filteredPotentialChats?.length !== 0 && 
+      {filteredPotentialChats?.length !== 0 && !isUserChatsLoading &&
         <div>
           <div className="flex items-center justify-center mb-4">
             <h2 className="font-medium">Users</h2>
@@ -79,6 +79,7 @@ export const UsersView = () => {
         </div>
       }
 
+      {isUserChatsLoading && !userChats && <div className="flex pt-2 justify-center text-sm text-gray-400">Loading...</div>}
       {filteredCurrentChats?.length === 0 && filteredPotentialChats?.length === 0 &&
         <div className="flex justify-center font-medium">No Users Found</div>}
     </div>
