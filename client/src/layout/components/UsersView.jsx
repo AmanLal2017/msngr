@@ -79,7 +79,7 @@ export const UsersView = () => {
         </div>
       }
 
-      {isUserChatsLoading && !userChats && <div className="flex pt-2 justify-center text-sm text-gray-400">Loading...</div>}
+      {isUserChatsLoading && <div className="flex pt-2 justify-center text-sm text-gray-400">Loading...</div>}
       {filteredCurrentChats?.length === 0 && filteredPotentialChats?.length === 0 &&
         <div className="flex justify-center font-medium">No Users Found</div>}
     </div>
