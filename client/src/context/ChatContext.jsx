@@ -25,7 +25,7 @@ export const ChatContextProvider = ({ children, user }) => {
   const [isModalOpen, setIsModalOpen] = useState(true);
 
   useEffect(() => {
-    const newSocket = io("msngr-production.up.railway.app");
+    const newSocket = io("https://msngr-production.up.railway.app");
     setSocket(newSocket);
 
     return () => {

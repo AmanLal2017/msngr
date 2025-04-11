@@ -1,4 +1,4 @@
-export const baseUrl = "msngr-production.up.railway.app/api";
+export const baseUrl = "https://msngr-production.up.railway.app/api";
 
 export const postRequest = async (url, body) => {
   const response = await fetch(url, {

@@ -1,1 +1,1 @@
-GET msngr-production.up.railway.app
+GET https://msngr-production.up.railway.app
