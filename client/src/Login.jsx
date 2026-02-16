@@ -76,14 +76,14 @@ const FormInput = ({ type, placeholder, value, onChange }) => (
 const ToggleAuthMode = ({ isRegister, toggleAuthMode }) => {
   const config = {
     text: isRegister ? "Already a member?" : "Don't have an account?",
-    buttonText: isRegister ? "Login here" : "Register",
+    buttonText: isRegister ? "Login" : "Register",
   };
 
   return (
     <div className="text-center mt-2">
       <div>
         {config.text}
-        <button className="ml-1" type="button" onClick={toggleAuthMode}>
+        <button className="ml-1 text-blue-700" type="button" onClick={toggleAuthMode}>
           {config.buttonText}
         </button>
       </div>

@@ -10,3 +10,10 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+.avatar-container {
+    overflow: hidden;
+    border-radius: 9999px;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}

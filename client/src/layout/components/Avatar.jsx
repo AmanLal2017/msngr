@@ -22,7 +22,7 @@ export const Avatar = ({ avatarId, userId, onlineDisabled }) => {
 
   return (
     <div className="relative w-10 h-10 bg-gray-600 rounded-full flex-shrink-0">
-      <img src={AVATAR_OPTIONS[avatarId]} alt="avatar" className="w-full h-full rounded-full" />
+      <img src={AVATAR_OPTIONS[avatarId]} alt="avatar" className="avatar-container w-full h-full rounded-full" />
       {!onlineDisabled && isOnline && (
         <div className="h-4 w-4 rounded-full bg-green-400 absolute -top-1 -right-1" />
     )}
